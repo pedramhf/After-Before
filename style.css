@@ -1,0 +1,65 @@
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.main {
+  display: inline-block;
+  background-color: rgb(201, 178, 200);
+
+  color: rgb(102, 34, 99);
+  position: relative;
+  margin-top: 200px;
+
+  /* vertical-align: middle; */
+}
+.main span {
+  display: block;
+  padding: 20px 30px;
+}
+.main span::after,
+.main span::before,
+.main::after,
+.main::before {
+  position: absolute;
+  background-color: rgb(102, 34, 99);
+  transition: all 1s ease-in-out;
+}
+.main span::after,
+.main span::before {
+  content: "";
+  width: 2px;
+  height: 0;
+}
+.main span::after {
+  top: 50%;
+  right: 0;
+}
+.main span::before {
+  top: 50%;
+  left: 0;
+}
+.main::after {
+  bottom: 0;
+  left: 50%;
+}
+.main::before {
+  top: 0;
+  left: 50%;
+}
+.main::after,
+.main::before {
+  content: "";
+  height: 2px;
+  width: 0;
+}
+
+.main:hover span::after,
+.main:hover span::before {
+  height: 100%;
+  top: 0;
+}
+.main:hover::after,
+.main:hover::before {
+  width: 100%;
+  left: 0;
+}
